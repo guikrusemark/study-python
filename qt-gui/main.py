@@ -1,7 +1,7 @@
 import sys
 import os
 from PyQt5.QtGui import QGuiApplication
-from PyQt5 import QQmlApplicationEngine
+from PyQt5.QQmlApplicationEngine import QQmlApplicationEngine
 from PyQt5.QtQuick import QQuickWindow
 
 QQuickWindow.setSceneGraphBackend('software')
