@@ -4,6 +4,8 @@ from PyQt5.QtGui import QGuiApplication
 from PyQt5.QQmlApplicationEngine import QQmlApplicationEngine
 from PyQt5.QtQuick import QQuickWindow
 
+
+# Set the scene graph backend to software
 QQuickWindow.setSceneGraphBackend('software')
 app = QGuiApplication(sys.argv)
 engine = QQmlApplicationEngine()
