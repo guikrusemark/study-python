@@ -1,18 +1,36 @@
 from typing import List
-import account
+from account import Account
 
 
 class Client:
-    name: str
-    cpf: str
-    address: str = "Address not registered"
-    accounts: List[account.Account] = []
+    __name: str
+    __cpf: str
+    __address: str = "Address not registered"
+    __accounts: List[Account] = []
 
-    def __init__(self, name: str, cpf: str, accounts: List[account.Account]):
-        self.name: str = name
-        self.cpf: str = cpf
-        self.accounts: List[account.Account] = accounts
-
+    def __init__(self, name: str, cpf: str, accounts: List[Account]):
+        self.__name: str = name
+        self.__cpf: str = cpf
+        self.__accounts: List[Account] = accounts
+        
     @property
-    def __str__(self):
-        return f"Name: {self.name}\nCPF: {self.cpf}\nAddress: {self.address}\nAccounts: {self.accounts}"
+    def accounts(self) -> List[Account]:
+        return self.__accounts
+    
+    @property
+    def address(self) -> str:
+        return self.__address
+    
+    @address.setter
+    def address(self, address: str) -> None:
+        self.__address: str = address
+        
+    @staticmethod
+    def get_type_client() -> str:
+        return "Phisical Client"
+
+    def __str__(self) -> str:
+        str : str = f"Name: {self.__name}\nCPF: {self.__cpf}\nAddress: {self.__address}\nAccounts: "
+        for account in self.__accounts:
+            str += f"\n{account}"
+        return str
