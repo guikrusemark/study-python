@@ -12,25 +12,25 @@ class Client:
         self.__name: str = name
         self.__cpf: str = cpf
         self.__accounts: List[Account] = accounts
-        
+
     @property
     def accounts(self) -> List[Account]:
         return self.__accounts
-    
+
     @property
     def address(self) -> str:
         return self.__address
-    
+
     @address.setter
     def address(self, address: str) -> None:
         self.__address: str = address
-        
+
     @staticmethod
     def get_type_client() -> str:
-        return "Phisical Client"
+        return "Physical Client"
 
     def __str__(self) -> str:
-        str : str = f"Name: {self.__name}\nCPF: {self.__cpf}\nAddress: {self.__address}\nAccounts: "
+        str_print: str = f"Name: {self.__name}\nCPF: {self.__cpf}\nAddress: {self.__address}\nAccounts: "
         for account in self.__accounts:
-            str += f"\n{account}"
-        return str
+            str_print += f"\n{account}"
+        return str_print
