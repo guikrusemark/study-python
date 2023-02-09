@@ -1,9 +1,19 @@
-class Series:
-    def __init__(self, title: str, number_of_seasons: int, number_of_episodes: int, premiered_in: int):
-        self.__title = title
-        self.__number_of_seasons = number_of_seasons
-        self.__number_of_episodes = number_of_episodes
-        self.__premiered_in = premiered_in
+from media import Media
+
+
+class Series(Media):
+    def __init__(self, title: str, author: str, publisher: str, year: int, rating: float, isbn: str, n_seasons: int):
+        super().__init__(title, author, publisher, year, rating, isbn)
+        self._n_seasons = n_seasons
+
+    @property
+    def n_seasons(self) -> int:
+        return self._n_seasons
 
     def __str__(self) -> str:
-        return f"{self.__title} - {self.__number_of_seasons} Seasons - First premiered in {self.__premiered_in}"
+        return f"{self._title} - {self._n_seasons} Seasons - First premiered in {self._year} - "\
+                f"Likes: {self._like_count}"
+
+    def __repr__(self) -> str:
+        return f"Series('{self._title}', '{self._author}', '{self._publisher}', {self._year}, {self._rating}, " \
+                f"'{self._isbn}', {self._n_seasons})"

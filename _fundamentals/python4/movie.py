@@ -1,12 +1,19 @@
-class Movie:
-    def __init__(self, title: str, year: int, rating: float):
-        self.__title = title
-        self.__year = year
-        self.__rating = rating
+from media import Media
+
+
+class Movie(Media):
+    def __init__(self, title: str, author: str, publisher: str, year: int, rating: float, isbn: str, duration: int):
+        super().__init__(title, author, publisher, year, rating, isbn)
+        self._duration = duration
 
     @property
-    def year(self) -> int:
-        return self.__year
+    def duration(self) -> int:
+        return self._duration
 
     def __str__(self) -> str:
-        return f"{self.__title} - IMDB rating: {self.__rating} - First premiered in {self.__year}"
+        return f"{self._title} - IMDB rating: {self._rating} - First premiered in {self._year} - " \
+               f"Likes: {self._like_count}"
+
+    def __repr__(self) -> str:
+        return f"Movie('{self._title}', '{self._author}', '{self._publisher}', {self._year}, {self._rating}, " \
+               f"'{self._isbn}', {self._duration})"
