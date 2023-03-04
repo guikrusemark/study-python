@@ -10,7 +10,7 @@ if __name__ == "__main__":
                            Movie("Avengers: Endgame", "Anthony Russo", "Marvel Studios", 2019, 8.4, "123456789", 181),
                            Series("The Office", "Greg Daniels", "NBC", 2005, 8.9, "987654321", 9),
                            Movie("The Dark Knight", "Christopher Nolan", "Warner Bros", 2008, 9.0, "123456789", 152),
-                           Series("Game of Thrones", "David Benioff", "HBO", 2011, 9.3, "987654321", 8),
+                           Series("game.py of Thrones", "David Benioff", "HBO", 2011, 9.3, "987654321", 8),
                            Movie("Interstellar", "Christopher Nolan", "Warner Bros", 2014, 8.6, "123456789", 169),
                            Series("The Walking Dead", "Frank Darabont", "AMC", 2010, 8.2, "987654321", 10),
                            Movie("Inception", "Christopher Nolan", "Warner Bros", 2010, 8.8, "123456789", 148),

@@ -1,0 +1,14 @@
+{% block template %}
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>{{title}}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+    </head>
+    <body>
+        {% block main_content %}
+        {% endblock %}
+    </body>
+    </html>
+
+{% endblock %}
