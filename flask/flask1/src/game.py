@@ -1,33 +1,41 @@
 class Game:
-    def __init__(self, name, category, description, rating=0):
-        self.name = name
-        self.category = category
-        self.description = description
-        self.rating = rating
+    def __init__(self, name: str, category: str, description: str, rating: float = 0):
+        self.__name: str = name
+        self.__category: str = category
+        self.__description: str = description
+        self.__rating: float = rating
 
     @property
-    def name(self):
-        return self._name
+    def name(self) -> str:
+        return self.__name
 
     @name.setter
-    def name(self, name):
-        self._name = name
+    def name(self, name: str):
+        self.__name = name
 
     @property
-    def category(self):
-        return self._category
+    def category(self) -> str:
+        return self.__category
 
     @category.setter
-    def category(self, category):
-        self._category = category
+    def category(self, category: str):
+        self.__category = category
 
     @property
-    def rating(self):
-        return self._rating
+    def description(self) -> str:
+        return self.__description
+
+    @description.setter
+    def description(self, description: str):
+        self.__description = description
+
+    @property
+    def rating(self) -> float:
+        return self.__rating
 
     @rating.setter
-    def rating(self, rating):
-        self._rating = rating
+    def rating(self, rating: float):
+        self.__rating = rating
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f'Game: {self.name} - {self.description}'
